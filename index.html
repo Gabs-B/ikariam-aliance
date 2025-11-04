@@ -288,6 +288,180 @@
       letter-spacing: 10px;
       text-shadow: 3px 3px 8px #000;
     }
+
+    .footer p {
+      font-size: 24px;
+      color: #f1e6c2;
+      margin-top: 20px;
+      font-style: italic;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    /* ========== RESPONSIVE MÓVIL ========== */
+    @media (max-width: 768px) {
+      /* Header móvil */
+      .header {
+        padding: 25px 15px;
+      }
+
+      .header::before,
+      .header::after {
+        font-size: 30px;
+      }
+
+      .header::before {
+        left: 10px;
+      }
+
+      .header::after {
+        right: 10px;
+      }
+
+      .header h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+      }
+
+      .header .subtitle {
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      /* Welcome móvil */
+      .welcome {
+        padding: 100px 15px;
+      }
+
+      .welcome h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .welcome p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* Cadena de mando móvil */
+      .chain-command {
+        padding: 30px 15px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+
+      .leaders {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .leader-card {
+        padding: 20px;
+      }
+
+      .leader-card h3 {
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      .leader-card p {
+        font-size: 20px;
+      }
+
+      /* Requisitos móvil */
+      .requirements {
+        padding: 30px 15px;
+      }
+
+      .req-list {
+        padding: 20px;
+      }
+
+      .req-list li {
+        font-size: 16px;
+        padding: 12px;
+        margin: 8px 0;
+      }
+
+      /* Tratados y Guerras móvil */
+      .treaties,
+      .wars {
+        padding: 80px 15px;
+      }
+
+      .treaties h2,
+      .wars h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+      }
+
+      .treaties p,
+      .wars p {
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+      }
+
+      /* Footer móvil */
+      .footer {
+        padding: 25px 15px;
+      }
+
+      .footer h2 {
+        font-size: 28px;
+        letter-spacing: 4px;
+      }
+
+      .footer p {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+
+    /* Extra pequeño (menos de 400px) */
+    @media (max-width: 400px) {
+      .header h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+
+      .header .subtitle {
+        font-size: 16px;
+      }
+
+      .welcome p {
+        font-size: 14px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .leader-card p {
+        font-size: 18px;
+      }
+
+      .req-list li {
+        font-size: 14px;
+      }
+
+      .treaties p,
+      .wars p {
+        font-size: 14px;
+      }
+
+      .footer h2 {
+        font-size: 24px;
+        letter-spacing: 2px;
+      }
+
+      .footer p {
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -355,10 +529,9 @@
     </div>
 
     <!-- Footer -->
-<!-- Footer -->
     <div class="footer">
       <h2>-T_Z-</h2>
-      <p style="font-size: 24px; color: #f1e6c2; margin-top: 20px; font-style: italic; letter-spacing: 3px; text-shadow: 2px 2px 5px #000;">De pie de costado pero nunca de rodillas</p>
+      <p>De pie de costado pero nunca de rodillas</p>
     </div>
   </div>
 </body>
