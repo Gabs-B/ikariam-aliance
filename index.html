@@ -2,60 +2,364 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Ikariam - Página Externa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templarios - Alianza Ikariam</title>
   <style>
-    html, body {
-      height: 100%;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      box-sizing: border-box;
     }
 
     body {
-      background: url('https://raw.githubusercontent.com/Gabs-B/ikariam-aliance/refs/heads/main/descarga.jpeg') 
-                  no-repeat center center fixed;
-      background-size: contain;
       font-family: 'Georgia', serif;
+      background-color: #1a0f0a;
       color: #f1e6c2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #2a1810;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, #4a0000 0%, #8b0000 100%);
+      padding: 40px 20px;
       text-align: center;
-      flex-direction: column;
+      border-bottom: 5px solid #d4af37;
+      position: relative;
     }
 
-    .content {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 20px 40px;
-      border-radius: 10px;
+    .header::before,
+    .header::after {
+      content: '🏛️';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 60px;
+      opacity: 0.3;
     }
 
-    h1 {
-      font-size: 40px;
-      color: gold;
-      text-shadow: 2px 2px 5px #000;
+    .header::before {
+      left: 20px;
+    }
+
+    .header::after {
+      right: 20px;
+    }
+
+    .header h1 {
+      font-size: 56px;
+      color: #fff;
+      text-shadow: 3px 3px 8px #000;
+      letter-spacing: 8px;
+      margin-bottom: 10px;
+    }
+
+    .header .subtitle {
+      font-size: 28px;
+      color: #d4af37;
+      font-style: italic;
+      text-shadow: 2px 2px 4px #000;
+      letter-spacing: 2px;
+    }
+
+    /* Welcome Section */
+    .welcome {
+      background: url('https://mitosymas.com/content/images/2024/11/DALL-E-2024-11-02-23.12.02---Epic-illustration-depicting-Ares--the-Greek-god-of-war--standing-powerfully-on-a-rocky-battlefield.-Ares-is-shown-in-full--ornate-Greek-armor-with-a-r.webp') center/cover;
+      padding: 250px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid #d4af37;
+    }
+
+    .welcome::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .welcome-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .welcome h2 {
+      font-size: 36px;
+      color: #d4af37;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 6px #000;
     }
 
-    h2 {
+    .welcome p {
+      font-size: 30px;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    /* Chain of Command */
+    .chain-command {
+      background-color: #3a2416;
+      padding: 50px 30px;
+      border-bottom: 3px solid #d4af37;
+    }
+
+    .section-title {
+      font-size: 42px;
+      color: #d4af37;
+      text-align: center;
+      margin-bottom: 40px;
+      font-style: italic;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .leaders {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .leader-card {
+      background: linear-gradient(135deg, #4a2c1a 0%, #2a1810 100%);
+      border: 3px solid #d4af37;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .leader-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .leader-card h3 {
+      font-size: 22px;
+      color: #d4af37;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .leader-card p {
       font-size: 26px;
       color: #fff;
+      font-weight: bold;
       text-shadow: 2px 2px 4px #000;
-      margin: 8px 0;
     }
 
-    hr {
-      width: 60%;
-      border: 1px solid #c0a060;
-      margin: 15px auto;
+    /* Requirements */
+    .requirements {
+      background-color: #2a1810;
+      padding: 50px 30px;
+      border-bottom: 3px solid #d4af37;
+    }
+
+    .req-list {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #4a2c1a 0%, #3a2416 100%);
+      border: 3px solid #d4af37;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .req-list ul {
+      list-style: none;
+    }
+
+    .req-list li {
+      font-size: 20px;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-left: 5px solid #d4af37;
+      border-radius: 5px;
+    }
+
+    .req-list li::before {
+      content: '⚔️ ';
+      margin-right: 10px;
+    }
+
+    /* Peace Treaties */
+    .treaties {
+      background: url('https://supercurioso.com/wp-content/uploads/2019/04/guerreros-espartanos-tapa-696x385.jpg') center/cover;
+      padding: 150px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid #d4af37;
+    }
+
+    .treaties::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .treaties-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .treaties h2 {
+      font-size: 42px;
+      color: #d4af37;
+      margin-bottom: 20px;
+      font-style: italic;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .treaties p {
+      font-size: 28px;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Wars */
+    .wars {
+      background: url('https://img.freepik.com/vector-premium/silueta-guerrero-espartano-lanza_23-2147967738.jpg') center/cover;
+      padding: 150px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 3px solid #d4af37;
+    }
+
+    .wars::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .wars-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wars h2 {
+      font-size: 42px;
+      color: #d4af37;
+      margin-bottom: 20px;
+      font-style: italic;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .wars p {
+      font-size: 28px;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(180deg, #8b0000 0%, #4a0000 100%);
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 5px solid #d4af37;
+    }
+
+    .footer h2 {
+      font-size: 48px;
+      color: #d4af37;
+      letter-spacing: 10px;
+      text-shadow: 3px 3px 8px #000;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h2>Líder Diplomático: Michellfer</h2>
-    <h2>General: Miguel25</h2>
-    <h2>Ministerio: Jordy26</h2>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>TEMPLARIOS</h1>
+      <div class="subtitle">-T_Z-</div>
+    </div>
+
+    <!-- Welcome -->
+    <div class="welcome">
+      <div class="welcome-content">
+        <h2>Bienvenidos a nuestra alianza</h2>
+        <p>TEMPLARIOS - Somos una alianza de guerreros forjados y criados con la sabiduría de Atenea. Únete al lado de nuestro Norte y tendrás la oportunidad de crecer y desarrollarte dentro del orden de la lealtad, honor y paz. Luchamos con todas nuestras fuerzas solo para disfrutar el sabor de nuestra Victoria.</p>
+      </div>
+    </div>
+
+    <!-- Chain of Command -->
+    <div class="chain-command">
+      <h2 class="section-title">Cadena de mando</h2>
+      <div class="leaders">
+        <div class="leader-card">
+          <h3>Líder Diplomático</h3>
+          <p>Michellfer</p>
+        </div>
+        <div class="leader-card">
+          <h3>General</h3>
+          <p>Miguel25</p>
+        </div>
+        <div class="leader-card full-width">
+          <h3>Ministro</h3>
+          <p>Jordy26</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements -->
+    <div class="requirements">
+      <h2 class="section-title">Requisitos</h2>
+      <div class="req-list">
+        <ul>
+          <li>Ser activo</li>
+          <li>Donador responsable</li>
+          <li>Apoyo entre todos los miembros</li>
+          <li>Ser leal</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Peace Treaties -->
+    <div class="treaties">
+      <div class="treaties-content">
+        <h2>Tratados de Paz</h2>
+        <p>POR LOS MOMENTOS NO HAY TRATADO</p>
+      </div>
+    </div>
+
+    <!-- Wars -->
+    <div class="wars">
+      <div class="wars-content">
+        <h2>Guerras</h2>
+        <p>POR LOS MOMENTOS NO NOS ENCONTRAMOS EN GUERRA</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<!-- Footer -->
+    <div class="footer">
+      <h2>-T_Z-</h2>
+      <p style="font-size: 24px; color: #f1e6c2; margin-top: 20px; font-style: italic; letter-spacing: 3px; text-shadow: 2px 2px 5px #000;">De pie de costado pero nunca de rodillas</p>
+    </div>
   </div>
 </body>
 </html>
